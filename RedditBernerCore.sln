@@ -1,0 +1,23 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RedditBernerCore", "RedditBernerCore\RedditBernerCore.csproj", "{3AA1BD61-2D40-4256-99A3-6AE9B13584D3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AuthTokenRetreiverCore", "AuthTokenRetreiverCore\AuthTokenRetreiverCore.csproj", "{5F627D59-7098-4D59-87F7-F313340476E5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3AA1BD61-2D40-4256-99A3-6AE9B13584D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AA1BD61-2D40-4256-99A3-6AE9B13584D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AA1BD61-2D40-4256-99A3-6AE9B13584D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AA1BD61-2D40-4256-99A3-6AE9B13584D3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5F627D59-7098-4D59-87F7-F313340476E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5F627D59-7098-4D59-87F7-F313340476E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5F627D59-7098-4D59-87F7-F313340476E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5F627D59-7098-4D59-87F7-F313340476E5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
