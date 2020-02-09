@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Threading;
 
 namespace RedditBerner
@@ -246,21 +247,23 @@ namespace RedditBerner
             }
         }
 
-        public void OpenBrowser(string authUrl, string browserPath = @"C:\Program Files (x86)\Google\Chrome\Application\chrome.exe")
+        public void OpenBrowser(string authUrl)
         {
-            try
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
             {
-                ProcessStartInfo processStartInfo = new ProcessStartInfo(authUrl);
-                Process.Start(processStartInfo);
+                Process.Start(new ProcessStartInfo(authUrl) { UseShellExecute = true });
             }
-            catch (System.ComponentModel.Win32Exception)
+            else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
             {
-                // This typically occurs if the runtime doesn't know where your browser is.  Use BrowserPath for when this happens.  --Kris
-                ProcessStartInfo processStartInfo = new ProcessStartInfo(browserPath)
-                {
-                    Arguments = authUrl
-                };
-                Process.Start(processStartInfo);
+                Process.Start("xdg-open", authUrl);
+            }
+            else if (RuntimeInformation.IsOSPlatform(OSPlatform.OSX))
+            {
+                Process.Start("open", authUrl);
+            }
+            else
+            {
+                throw new NotSupportedException("Cannot open browser in this system.");
             }
         }
 
